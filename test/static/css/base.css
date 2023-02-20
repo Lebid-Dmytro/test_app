@@ -1,0 +1,21 @@
+.sub-comments {
+    padding: 30px 200px 0px 100px;
+    color: red;
+    font-size:15px;
+}
+
+.sub-comments-h2{
+    font-size:16px;
+}
+
+.sub-comments-h5{
+    font-size:12px;
+}
+
+.img-fluid {
+    vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+}

@@ -1,7 +1,6 @@
 from django.contrib import admin
-from django.utils.safestring import mark_safe
 
-from spa_app.models import Reviews, Photo
+from spa_app.models import Comments, Photo
 
 
 @admin.register(Photo)
@@ -9,7 +8,7 @@ class PhotoAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Reviews)
-class ReviewsAdmin(admin.ModelAdmin):
+@admin.register(Comments)
+class CommentsAdmin(admin.ModelAdmin):
     pass
 
