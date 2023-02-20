@@ -25,7 +25,7 @@ class Comments(models.Model):
     file_comments = models.FileField(blank=True)
 
     def __str__(self):
-        return f"Photo: {self.name}"
+        return f"Name: {self.name}"
 
 
 

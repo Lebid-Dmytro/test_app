@@ -4,12 +4,13 @@ from django.views.generic import DetailView
 
 from spa_app.forms import CommentForm
 from spa_app.models import Photo
+from test import settings
 
 
 class PhotoView(View):
     def get(self, request):
-        list_view = Photo.objects.all()[::1]
-        return render(request, 'index.html', {'list_view': list_view, })
+        list_view = Photo.objects.all()
+        return render(request, 'index.html', {'list_view': list_view})
 
 
 class PhotoDescriptionView(View):
@@ -21,7 +22,7 @@ class PhotoDescriptionView(View):
 class AddComments(View):
     '''Відгуки'''
     def post(self, request, pk):
-        form = CommentForm(request.POST)
+        form = CommentForm(request.POST, request.FILES)
         if form.is_valid():
             form = form.save(commit=False)
             if request.POST.get('parent', None):
@@ -29,3 +30,5 @@ class AddComments(View):
             form.photo_id = pk
             form.save()
         return redirect(f'/{pk}')
+
+

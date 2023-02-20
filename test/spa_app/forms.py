@@ -5,9 +5,11 @@ from .models import Comments
 
 
 class CommentForm(forms.ModelForm):
+    # captcha = ReCaptchaField()
+
     class Meta:
         model = Comments
-        fields = ('name', 'email', 'text', 'photo_comments', 'file_comments')
+        fields = ('name', 'email', 'text', 'photo_comments', 'file_comments',)
         # widgets = {
         #     'name': forms.TextInput(attrs={"class": "form-control border"}),
         #     'email': forms.EmailInput(attrs={"class": "form-control border"}),
